@@ -1,0 +1,13 @@
+#!/bin/bash
+set -eu
+echo "It works!" >/tmp/i-am-runtime-artifact1.txt
+chmod 666 /tmp/i-am-runtime-artifact1.txt
+echo "It works!" >/tmp/.i-am-runtime-artifact3.txt
+chmod 600 /tmp/.i-am-runtime-artifact3.txt
+cd /tmp
+ln -s i-am-runtime-artifact1.txt i-am-runtime-artifact2
+printf '#!/bin/bash\necho "I am $0!"\n' >/tmp/run-me
+chmod 755 /tmp/run-me
+mkdir -p /tmp/data-dir/2
+touch /tmp/data-dir/1
+touch /tmp/data-dir/2/3
