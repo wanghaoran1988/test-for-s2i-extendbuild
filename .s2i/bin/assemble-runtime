@@ -2,3 +2,4 @@
 set -eu
 echo "I'm assemble-runtime"
 touch /tmp/assemble-runtime-done
+env |grep S2I_TEST ||true

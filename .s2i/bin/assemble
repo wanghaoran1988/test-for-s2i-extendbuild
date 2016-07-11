@@ -11,3 +11,4 @@ chmod 755 /tmp/run-me
 mkdir -p /tmp/data-dir/2
 touch /tmp/data-dir/1
 touch /tmp/data-dir/2/3
+env |grep S2I_TEST ||true
