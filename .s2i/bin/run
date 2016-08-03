@@ -1,3 +1,8 @@
 #!/bin/bash
 set -eu
-echo "I am run in the source repo"
+while true
+do
+  sleep 1
+  echo "I am run in the source repo"
+done
+
