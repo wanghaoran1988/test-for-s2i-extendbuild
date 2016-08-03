@@ -6,3 +6,4 @@ COPY ./run /usr/libexec/s2i/
 COPY ./assemble  /usr/libexec/s2i/
 RUN mkdir /tmp/test/
 WORKDIR /tmp/test/
+USER 1001
