@@ -1,8 +1,0 @@
-#!/bin/bash
-set -eu
-while true
-do
-  sleep 1
-  echo "I am run in the builder image"
-done
-
