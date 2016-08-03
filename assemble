@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "I am assemble inside the source repo"
+echo "I am assemble from url"
 set -eu
 echo "It works!" >/tmp/i-am-runtime-artifact1.txt
 chmod 666 /tmp/i-am-runtime-artifact1.txt

@@ -1,5 +1,5 @@
 #!/bin/bash
 set -eu
-echo "I'm assemble-runtime in source repo"
+echo "I'm assemble-runtime from url"
 touch /tmp/assemble-runtime-done
 env |grep S2I_TEST ||true

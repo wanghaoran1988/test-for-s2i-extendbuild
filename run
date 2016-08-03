@@ -3,6 +3,6 @@ set -eu
 while true
 do
   sleep 1
-  echo "I am run in the source repo"
+  echo "I am run from url"
 done
 
