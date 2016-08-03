@@ -1,0 +1,54 @@
+{
+  "kind": "BuildConfig",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "extended-bc-artifacts-from-image"
+  },
+  "spec": {
+    "source": {
+      "git": {
+        "uri": "https://github.com/wanghaoran1988/test-for-s2i-extendbuild",
+        "ref": "master"
+      }
+    },
+    "strategy": {
+      "sourceStrategy": {
+        "from": {
+          "kind": "DockerImage",
+          "name": "docker.io/uptoknow/extendedbuild_builder:latest"
+        },
+        "forcePull": true,
+        "runtimeImage": {
+          "kind": "DockerImage",
+          "name": "docker.io/uptoknow/extendedbuild_runtime:latest"
+        },
+        "runtimeArtifacts": [
+        ],
+        "env": [
+          {
+            "name": "USING_ENV_FROM_BUILD_CONFIG",
+            "value": "yes"
+          }
+        ]
+      }
+    },
+    "output": {
+      "to": {
+        "kind": "ImageStreamTag",
+        "name": "extended-repo:latest"
+      }
+    }
+  }
+}
+{
+  "kind": "ImageStream",
+  "apiVersion": "v1",
+  "metadata": {
+    "name": "extended-repo",
+    "creationTimestamp": null
+  },
+  "spec": {},
+  "status": {
+    "dockerImageRepository": ""
+  }
+}
